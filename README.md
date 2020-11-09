@@ -7,4 +7,5 @@ requirements
 python3 and up
 
 pip install pyautogui
+
 pip install keyboard
