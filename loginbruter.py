@@ -5,6 +5,7 @@ import time
 import sys
 import os
 
+trys = 0
 verbose = False
 post = False
 wordlist_path = ""
@@ -112,10 +113,13 @@ while True:
                 password = password.replace("\n","")
                 user = user.replace("\n","")
                 os.system("clear")
-                print(f"[{user}][{password}]")
+                print(f"[{str(trys)}][{user}][{password}]")
                 if send(user,password,unsuc,requ,post,post_data,verbose):
-                    print(f"Success | Password: {password} | Username: {user}")
+                    trys += 1
+                    print(f"Success | Password: {password} | Username: {user} | Trys: {str(trys)}")
                     exit()
+                trys += 1
+                time.sleep(delay)
     elif use_listpass:
         with open(userlist_path) as infile:
             for line in infile:
@@ -123,9 +127,10 @@ while True:
                 user = user.replace("\n","")
                 password = password.replace("\n","")
                 os.system("clear")
-                print(f"[{user}][{password}]")
+                trys += 1
+                print(f"[{str(trys)}][{user}][{password}]")
                 if send(user,password,unsuc,requ,post,post_data,verbose):
-                    print(f"Success | Password: {password} | Username: {user}")
+                    print(f"Success | Password: {password} | Username: {user} | Trys: {str(trys)}")
                     exit()
                 time.sleep(delay)
     else:
