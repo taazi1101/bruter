@@ -113,14 +113,13 @@ while True:
                 password = password.replace("\n","")
                 user = user.replace("\n","")
                 os.system("clear")
+                trys += 1
                 print(f"[{str(trys)}][{user}][{password}]")
                 if send(user,password,unsuc,requ,post,post_data,verbose):
-                    trys += 1
                     print(f"Success | Password: {password} | Username: {user} | Trys: {str(trys)}")
                     exit()
-                trys += 1
                 time.sleep(delay)
-    elif use_listpass:
+    elif use_listuser:
         with open(userlist_path) as infile:
             for line in infile:
                 user = line
@@ -134,7 +133,7 @@ while True:
                     exit()
                 time.sleep(delay)
     else:
-        send(user,password,unsuc,requ,post)
+        send(user,password,unsuc,requ,post,post_data,verbose)
     print("Login unsuccesful.")
     break
     
