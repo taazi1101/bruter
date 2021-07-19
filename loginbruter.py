@@ -54,7 +54,7 @@ def send(user,pasw,unsuc,requ,post,post_data,verbose):
 
 
 def info():
-    print("-P= : Wordlist path\n-p= : Preset password\n-U= User wordlist path\n-u= : Preset username\n-v : Print out request return\n-post= : set mode to post and add post variables format=(-post='username='-USER-&password=-PASS-)\n-d= : Delay\n-r= Request format (put -USER- in username filed and -PASS- in password field.)\n-c= : If this value is present in the site login was unsuccesful.\nExample: -u=John -P=/usr/share/wordlists/rockyou.txt -r=http://example.com/login.php?u=-USER-&p=-PASS- -c=unsuccesful")
+    print("-P= : Wordlist path\n-p= : Preset password\n-U= User wordlist path\n-u= : Preset username\n-v : Print out request return\n-post= : set mode to post and add post variables format=(-post='username=-USER-&password=-PASS-')\n-d= : Delay\n-r= Request format (put -USER- in username filed and -PASS- in password field.)\n-c= : If this value is present in the site login was unsuccesful.\nExample: -u=John -P=/usr/share/wordlists/rockyou.txt -r=http://example.com/login.php?u=-USER-&p=-PASS- -c=unsuccesful")
 
 sys.argv.pop(0)
 if len(sys.argv) < 1:
