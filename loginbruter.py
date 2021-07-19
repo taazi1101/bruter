@@ -1,4 +1,3 @@
-import pyautogui
 import requests
 import keyboard
 import time
