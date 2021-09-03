@@ -23,7 +23,7 @@ if wordlist.endswith('.txt'):
                     print("Exit")
                     exit()
                 else:
-                    pyautogui.typewrite(line)
+                    pyautogui.typewrite(line.replace("\n",""))
                     pyautogui.press('enter')
     if enter == '2':
         with open(wordlist) as f:
@@ -33,7 +33,7 @@ if wordlist.endswith('.txt'):
                     print("Exit")
                     exit()
                 else:
-                    pyautogui.typewrite(line)
+                    pyautogui.typewrite(line.replace("\n",""))
 
     else:
         print("Invalid input")
